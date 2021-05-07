@@ -15,7 +15,7 @@ const Login = () => {
                             <input type="email" className="form-control mt-3" placeholder="Email" />
                             <input type="password" className="form-control mt-3" placeholder="Password"/>
                             <p className="text-end">
-                                <Link>Forgot Password?</Link>
+                                <Link className="nav-link" to="/Signup">No Account?</Link>
                             </p>
                             <button className="btn btn-primary border-light ">Sign In</button>
                         </form>

@@ -31,8 +31,20 @@ const navBar = () => {
                     </div>
 
                     <div className="navbar-nav">
-                        <Link className="nav-link" to="/">Log in</Link>
-                        <Link className="nav-link" to="/SignUp">Sign Up</Link>
+                        <div className="p-2">
+                            <form className="d-flex bg-success bg-gradient rounded-pill">
+                                <Link className="nav-link" to="/">Log in</Link>
+                            </form>
+                        </div>
+                        <div className="p-2">
+                            <form className="d-flex bg-danger bg-gradient rounded-pill">
+                                <Link className="nav-link" to="/SignUp">Sign Up</Link>
+                            </form>
+                        </div>
+
+                    
+    
+                        
                     </div>
           
 

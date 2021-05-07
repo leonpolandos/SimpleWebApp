@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import NavBar from '../../Molecules/Navigation/navBar';
 import {Link} from 'react-router-dom';
 
@@ -17,14 +17,21 @@ const Profile = () => {
                                 {/* Membuat border foto */}
                                 <div className="row justify-content-center mt-3"> {/* Membuat konten berada di tengah */}
                                     <div className="col-md-4">
-                                        <form className="border border-dark rounded rounded-circle p-5">
+                                        <form className="border border-dark rounded rounded-circle p-5" >
                                             <img src="../../../img/create-awesome-logo-design.jpg"></img>
                                         </form>
                                     </div>
                                 </div>
                                 <Link> Change Photo Profile </Link>
                                 {/* Batas border foto */}
-                                <input type="text" className="form-control mt-3" placeholder="Change UserName here" />
+                                <p className="text-start mt-3">
+                                    <small>Change Name :</small>
+                                </p>
+                                <input type="text" className="form-control mt-3" placeholder="Change Full Name here" />
+                                <p className="text-start mt-3">
+                                    <small>Change Password :</small>
+                                </p>
+                                <input type="password" className="form-control mt-3" placeholder="Change Password" />
                                 <button className="btn btn-primary mt-2">Save</button>
 
                                 <br />

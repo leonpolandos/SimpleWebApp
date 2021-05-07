@@ -6,7 +6,7 @@ const Post = () => {
     return (
         <>
             <Navbar />  
-            <h1>All the post foto will be sent here</h1>
+            <h1 className="text-center mt-5 ">All the post foto will be sent here</h1>
         </>
     )
 }
