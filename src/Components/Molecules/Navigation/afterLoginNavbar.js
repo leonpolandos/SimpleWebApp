@@ -1,8 +1,26 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
+import firebase from '../../../Config/Firebase/index'
 
-const navBar = () => {
 
+
+const AfterLoginNavbar = () => {
+
+    const historyN = useHistory()
+
+    const logoutClick = () => {
+        firebase.auth().signOut()
+        .then(historyN.push('/'))
+        
+    } 
+    let name;
+    let user = firebase.auth().currentUser;
+
+
+    if (user != null) {
+        name = user.displayName;
+    } 
+    console.log(name)
     return (
         <div className="container-liquid">
             {/* <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -19,27 +37,19 @@ const navBar = () => {
                     </div>
                 </div>
                 </nav> */}
-            <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-                <div class="container-fluid">
-
-                <div >
-                    {/* KOSONG */}
-                </div>
+            <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
+                <div className="container-fluid">
 
                     <div className="navbar-nav">
-                        <div className="p-2">
-                            <form className="d-flex bg-success bg-gradient rounded-pill">
-                                <Link className="nav-link" to="/">Log in</Link>
-                            </form> 
-                        </div>
-                        <div className="p-2">
-                            <form className="d-flex bg-danger bg-gradient rounded-pill">
-                                <Link className="nav-link" to="/SignUp">Sign Up</Link>
-                            </form>
-                        </div>   
-                    </div>
-          
-
+                        <Link className="nav-link"  to="/profile">Profile</Link>
+                        <Link className="nav-link"  to="/post">Your Post</Link>
+                    </div> 
+                    <div className="navbar-nav">
+                        <h1 className="text-light">Welcome {name}</h1>
+                    </div>      
+                    <div className="navbar-nav">
+                        <button className="btn btn-danger mt-2" type="button" onClick={logoutClick}>Logout</button>
+                    </div>    
                 </div>
             </nav>
         </div>
@@ -47,4 +57,4 @@ const navBar = () => {
     )
 }
 
-export default navBar;
+export default AfterLoginNavbar;

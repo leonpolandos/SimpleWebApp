@@ -1,11 +1,11 @@
 import React from 'react';
-import Navbar from '../../Molecules/Navigation/navBar';
 import Card from '../../Molecules/Card/card';
+import AfterLoginNavbar from '../../Molecules/Navigation/afterLoginNavbar';
 
 const Post = () => {
     return (
         <>
-            <Navbar />  
+            <AfterLoginNavbar />  
             <h1 className="text-center mt-5 ">All the post foto will be sent here</h1>
         </>
     )
