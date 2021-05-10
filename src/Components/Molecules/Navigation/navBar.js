@@ -29,12 +29,12 @@ const navBar = () => {
                     <div className="navbar-nav">
                         <div className="p-2">
                             <form className="d-flex bg-success bg-gradient rounded-pill">
-                                <Link className="nav-link" to="/">Log in</Link>
+                                <Link className="nav-link" value={window.onload} to="/">Log in</Link>
                             </form> 
                         </div>
                         <div className="p-2">
                             <form className="d-flex bg-danger bg-gradient rounded-pill">
-                                <Link className="nav-link" to="/SignUp">Sign Up</Link>
+                                <Link className="nav-link" value={window.onload} to="/SignUp">Sign Up</Link>
                             </form>
                         </div>   
                     </div>

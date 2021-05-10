@@ -10,10 +10,11 @@ const Signup = () => {
     const [password, setPassword] = useState('');
     const [fullName, setfullName] = useState('');
     const [fotoProfil, setfotoProfil] = useState({});
+ 
 
-
+   
     let history = useHistory();
-    console.log("foto : " + fotoProfil);
+    console.log("foto : " + fotoProfil.name);
 
     const onSubmit = () => {
         const data = {
@@ -21,7 +22,7 @@ const Signup = () => {
             fullname: fullName,
             password: password,
         };  
- 
+        
 
         if(data.email === "" || data.fullname === "" || data.password === ""){
             alert("All input must be filled");
@@ -40,7 +41,7 @@ const Signup = () => {
             .then((userCredential) => {
                 const userId = userCredential.user.uid;
                 firebase.database().ref('Users/' + userId).set({ data })
-                //Passing fullName ke displayName
+                //Passing fotoProfil ke storage
                 firebase.storage().ref(`Users/${userCredential.user.uid}/Profile.jpg`).put(fotoProfil)
                 .then(() => console.log("Update Sukses"))
                 .catch(() => {
@@ -54,6 +55,7 @@ const Signup = () => {
                 setfullName('');
                 setEmail('');
                 setPassword('');
+                alert("Sign Up Success");
                 history.push('/');
             })
             .catch((error) => {

@@ -6,7 +6,7 @@ import {useHistory} from 'react-router-dom';
 
 
 const Login = () => {
-
+    let loading = document.getElementById('loading')
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
@@ -19,8 +19,8 @@ const Login = () => {
         .signInWithEmailAndPassword(email, password)
         .then(() => historyLogin.push('/profile'))
         .catch(error => error)
+        loading.style.visibility = 'visible'
     }
-
     return (
         <>
         <NavBar />
@@ -46,6 +46,10 @@ const Login = () => {
                                 <Link className="nav-link" to="/Signup">No Account?</Link>
                             </p>
                             <button type="button" className="btn btn-primary border-light" onClick={submitLogin}>Sign In</button>
+                            <br />
+                            <div className="spinner-border text-primary mt-1 invisible" role="status" id="loading">
+                                <span className="visually-hidden">Loading...</span>
+                            </div>
                         </form>
                     </form>
                 </div>

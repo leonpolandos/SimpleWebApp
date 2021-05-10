@@ -7,7 +7,6 @@ import firebase from '../../../Config/Firebase/index'
 const AfterLoginNavbar = () => {
 
     const historyN = useHistory()
-
     const logoutClick = () => {
         firebase.auth().signOut()
         .then(historyN.push('/'))
@@ -15,8 +14,6 @@ const AfterLoginNavbar = () => {
     } 
     let name;
     let user = firebase.auth().currentUser;
-
-
     if (user != null) {
         name = user.displayName;
     } 
@@ -41,14 +38,14 @@ const AfterLoginNavbar = () => {
                 <div className="container-fluid">
 
                     <div className="navbar-nav">
-                        <Link className="nav-link"  to="/profile">Profile</Link>
-                        <Link className="nav-link"  to="/post">Your Post</Link>
+                        <Link className="nav-link" to="/profile">Profile</Link>
+                        <Link className="nav-link" to="/post">Your Image</Link>
                     </div> 
                     <div className="navbar-nav">
-                        <h1 className="text-light">Welcome {name}</h1>
+                        <h4 className="text-light">Welcome {name}</h4>
                     </div>      
                     <div className="navbar-nav">
-                        <button className="btn btn-danger mt-2" type="button" onClick={logoutClick}>Logout</button>
+                        <button className="btn btn-danger mt-2" type="button" value={window.onload} onClick={logoutClick}>Logout</button>
                     </div>    
                 </div>
             </nav>
