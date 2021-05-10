@@ -21,7 +21,11 @@ const Profile = () => {
             firebase.auth().onAuthStateChanged(user => {
                 if(user){
                 firebase.storage().ref(`Users/${user.uid}/${foto.name}`).put(foto)
-                .then(() => console.log("Update Sukses"))
+                .then(() => {
+                    alert("Foto Berhasil Diupload") ;
+                    console.log("Update Sukses");
+                })
+                
                 .catch(() => {
                     console.log("Eror");
                 })
@@ -85,7 +89,7 @@ const Profile = () => {
                                     
                                     />
                                     <div className="navbar-nav">
-                                            <Link className="btn btn-primary mt-2" onClick={onPost} to="/post">Upload Photo</Link>
+                                            <button className="btn btn-primary mt-2" onClick={onPost}>Upload Photo</button>
                                     </div> 
                                 </div>
                                 {/* Batas border foto */}

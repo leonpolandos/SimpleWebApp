@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {useHistory} from 'react-router-dom';
 import AfterLoginNavbar from '../../Molecules/Navigation/afterLoginNavbar';
 import firebase from '../../../Config/Firebase/index';

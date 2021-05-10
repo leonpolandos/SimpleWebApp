@@ -9,7 +9,10 @@ const AfterLoginNavbar = () => {
     const historyN = useHistory()
     const logoutClick = () => {
         firebase.auth().signOut()
-        .then(historyN.push('/'))
+        .then(() => {
+            alert("LogOut berhasil")
+            historyN.push('/') 
+        })
         
     } 
     let name;

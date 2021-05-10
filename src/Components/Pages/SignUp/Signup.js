@@ -78,6 +78,9 @@ const Signup = () => {
                             <h4>Sign Up</h4>
                             <div className="row justify-content-center mt-3"> {/* Membuat konten berada di tengah */}
                             </div>
+                            <p className="text-start mt-3">
+                                <small className="fw-bold">Foto Profil :</small>
+                            </p>
                             <div class="input-group">
                                 <input 
                                 type="file" 
@@ -89,7 +92,7 @@ const Signup = () => {
                                 onChange={(e) => setfotoProfil(e.target.files[0])}
                                 
                                 />
-                                <button className="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
+                                
                             </div>
                             <p className="text-start mt-3">
                                 <small className="fw-bold">Input Your Name :</small>
